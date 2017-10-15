@@ -2,6 +2,14 @@
 Thie objective is to control the color of an RGB LED through the use of UART and three individual PWM signals.
 Multiple MSP430 boards can be connected together in any order using UART and the code should still work.
 
+## Why MSP430F5529?
+All of the board were considered but this one came out on top because of the easy and reliable implementation for hardware PWM along with reliable UART communication using the usb serial cable.
+
+## Problems with other boards
+### MSP430FR2311 Only has Timer B, does not have reliable PWM, only works with UART USB backchannel
+### MSP430FR5994 Doesn't reliably work with hardware PWM. Doesn't reliably work with UART serial cable
+### MSP430FR6989 Doesn't work at all with either UART USB backchannel or serial cable
+### MSP430G2553 Doesn't have enough CCR registers for 3 PWM
 
 ## Circuit
 The RGB LED was common anode so a circuit needed to be created to support this. 
@@ -15,7 +23,7 @@ We need three PWM signals, one for each color of the led. The common anode means
 must be hooked up to VCC which I chose to be 5V. Each leg then is connected to a 1K resistor to limit the current running through the nMOS transistors.
 The nMOS transistors are used as low side switches. This means that the gate is connected to a GPIO pin on the microcontroller which controls whether the led is on or not.
 1K pulldown resistors are needed between the gate and ground for each of these transistors so that they aren't floating.
-The headers on the bottom of the board where used to breakout the pins to a breadboard. 
+The headers on the bottom of the board were used to breakout the pins and power to a breadboard. 
 
 ### Red control: P1.2
 ### Green control: P1.3
@@ -27,7 +35,7 @@ The headers on the bottom of the board where used to breakout the pins to a brea
 
 ## UART
 The UART structure was standardized so that each node in the chain will parse through 8 bytes worth of data to control the PWM on that board as well as what data to send to the next.
-Using a serial to usb cable, the green was connected to P3.4 and white connected to P3.3.
+Using a serial to usb cable, the green was connected to P3.4 and white connected to P3.3. A packet with RGB values will be sent to the next board in the chain while the values that were used for the current board were removed.
 
 ### Byte 0: Total bytes in package 0x08
 ### Byte 1: Red duty cycle current board
