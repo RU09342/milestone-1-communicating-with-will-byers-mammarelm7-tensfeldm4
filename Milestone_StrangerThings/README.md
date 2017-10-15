@@ -41,14 +41,22 @@ The headers on the bottom of the board were used to breakout the pins and power 
 The UART structure was standardized so that each node in the chain will parse through 8 bytes worth of data to control the PWM on that board as well as what data to send to the next.
 Using a serial to usb cable, the green was connected to P3.4 and white connected to P3.3. A packet with RGB values will be sent to the next board in the chain while the values that were used for the current board were removed.
 
-### Byte 0: Total bytes in package 0x08
-### Byte 1: Red duty cycle current board
-### Byte 2:	Green duty cycle current board
-### Byte 3: Blue duty cycle current board
-### Byte 4: Red duty cycle next board
-### Byte 5: Green duty cycle next board
-### Byte 6: Blue duty cycle next board
-### Byte 7: End of message 0X0D
+### Byte 0: 
+Total bytes in package 0x08
+### Byte 1: 
+Red duty cycle current board
+### Byte 2:	
+Green duty cycle current board
+### Byte 3: 
+Blue duty cycle current board
+### Byte 4: 
+Red duty cycle next board
+### Byte 5: 
+Green duty cycle next board
+### Byte 6: 
+Blue duty cycle next board
+### Byte 7: 
+End of message 0X0D
 
 
 ## UART Testing
