@@ -43,7 +43,7 @@ Using a serial to usb cable, the green was connected to P3.4 and white connected
 The UART was tested using Realterm where an 8 byte string was sent to the board to turn the led a purple color. 
 The Realterm displayed the data that will be transmitted to the next board which are rgb values encapsulated in a new 5 byte package. 
 
-### Sent 0x08 0x7D 0x00 0xFE 0x41 0xFA 0x00 0x0D
+### Sent: 0x08 0x7D 0x00 0xFE 0x41 0xFA 0x00 0x0D
 
 ![alt text](MSP430F5529/images/realterm.png "Realterm")
 
