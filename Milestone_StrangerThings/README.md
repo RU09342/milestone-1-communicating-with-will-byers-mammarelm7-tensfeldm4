@@ -17,14 +17,13 @@ The nMOS transistors are used as low side switches. This means that the gate is 
 1K pulldown resistors are needed between the gate and ground for each of these transistors so that they aren't floating.
 The headers on the bottom of the board where used to breakout the pins to a breadboard. 
 
-### Pins Used:
 ### Red control: P1.2
 ### Green control: P1.3
 ### Blue control: P1.4
 
 ![alt text](MSP430F5529/images/circuitSchem.png "Circuit Schematic")
 
-![alt text](MSP430F5529/images/circuitLedOFF.png "Circuit OFF")
+![alt text](MSP430F5529/images/circuitLedOFF.JPG "Circuit OFF")
 
 ## UART
 The UART structure was standardized so that each node in the chain will parse through 8 bytes worth of data to control the PWM on that board as well as what data to send to the next.
@@ -39,6 +38,7 @@ Using a serial to usb cable, the green was connected to P3.4 and white connected
 ### Byte 6: Blue duty cycle next board
 ### Byte 7: End of message 0X0D
 
+
 ## UART Testing
 The UART was tested using Realterm where an 8 byte string was sent to the board to turn the led a purple color. 
 The Realterm displayed the data that will be transmitted to the next board which are rgb values encapsulated in a new 5 byte package. 
@@ -47,7 +47,7 @@ The Realterm displayed the data that will be transmitted to the next board which
 
 ![alt text](MSP430F5529/images/realterm.png "Realterm")
 
-![alt text](MSP430F5529/images/circuitLedON.png "Circuit Schematic")
+![alt text](MSP430F5529/images/circuitLedON.JPG "Circuit ON")
 
 
 ## Code
