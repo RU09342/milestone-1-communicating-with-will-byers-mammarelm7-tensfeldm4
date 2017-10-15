@@ -6,10 +6,14 @@ Multiple MSP430 boards can be connected together in any order using UART and the
 All of the board were considered but this one came out on top because of the easy and reliable implementation for hardware PWM along with reliable UART communication using the usb serial cable.
 
 ## Problems with other boards
-### MSP430FR2311 Only has Timer B, does not have reliable PWM, only works with UART USB backchannel
-### MSP430FR5994 Doesn't reliably work with hardware PWM. Doesn't reliably work with UART serial cable
-### MSP430FR6989 Doesn't work at all with either UART USB backchannel or serial cable
-### MSP430G2553 Doesn't have enough CCR registers for 3 PWM
+### MSP430FR2311 
+Only has Timer B, does not have reliable PWM, only works with UART USB backchannel
+### MSP430FR5994
+Doesn't reliably work with hardware PWM. Doesn't reliably work with UART serial cable
+### MSP430FR6989 
+Doesn't work at all with either UART USB backchannel or serial cable
+### MSP430G2553 
+Doesn't have enough CCR registers for 3 PWM
 
 ## Circuit
 The RGB LED was common anode so a circuit needed to be created to support this. 
