@@ -1,9 +1,9 @@
 # Milestone 1: Communicating with Will Byers MSP430F5529
-Thie objective is to control the color of an RGB LED through the use of UART and three individual PWM signals.
+The objective is to control the color of an RGB LED through the use of UART and three individual PWM signals.
 Multiple MSP430 boards can be connected together in any order using UART and the code should still work.
 
 ## Why MSP430F5529?
-All of the board were considered but this one came out on top because of the easy and reliable implementation for hardware PWM along with reliable UART communication using the usb serial cable.
+All of the boards were considered but this one came out on top because of the easy and reliable implementation for hardware PWM along with reliable UART communication using the usb serial cable.
 
 ## Problems with other boards
 ### MSP430FR2311 
